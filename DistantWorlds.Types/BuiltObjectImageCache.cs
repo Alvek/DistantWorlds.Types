@@ -385,7 +385,7 @@ namespace DistantWorlds.Types
         //private Bitmap LoadImage(string filepath)
         //{
         //    Bitmap result = null;
-        //    if (File.Exists(filepath))
+        //    if (FileExist.FileExists(filepath))
         //    {
         //        result = SafeLoadImage(filepath);
         //    }
@@ -395,7 +395,7 @@ namespace DistantWorlds.Types
         private Bitmap LoadImageData(int key, string filepath)
         {
             Bitmap result = null;
-            if (File.Exists(filepath))
+            if (FileExist.FileExists(filepath))
             {
                 int imageSize = 0;
                 Bitmap maskImage = null;
@@ -415,7 +415,7 @@ namespace DistantWorlds.Types
         private Bitmap SafeLoadImage(string imagePath)
         {
             Bitmap result = null;
-            if (File.Exists(imagePath))
+            if (FileExist.FileExists(imagePath))
             {
                 try
                 {
@@ -432,7 +432,7 @@ namespace DistantWorlds.Types
         private Bitmap LoadImageDataSmall(int key, string filepath)
         {
             Bitmap result = null;
-            if (File.Exists(filepath))
+            if (FileExist.FileExists(filepath))
             {
                 int imageSize = 0;
                 Bitmap maskImage = null;
@@ -458,7 +458,7 @@ namespace DistantWorlds.Types
             lightPoints = new List<Point>();
             Color color = Color.FromArgb(0, 0, 0, 0);
             bool flag = false;
-            if (File.Exists(filepath))
+            if (FileExist.FileExists(filepath))
             {
                 bitmap = SafeLoadImage(filepath);
                 if (filepath.ToLower(CultureInfo.InvariantCulture).Substring(filepath.Length - 4, 4) == ".png")
@@ -495,13 +495,13 @@ namespace DistantWorlds.Types
         {
             Bitmap bitmap = null;
             string empty = string.Empty;
-            if (File.Exists(fullPathWithoutSuffixCustom + ".png") || File.Exists(fullPathWithoutSuffixCustom + ".bmp"))
+            if (FileExist.FileExists(fullPathWithoutSuffixCustom + ".png") || FileExist.FileExists(fullPathWithoutSuffixCustom + ".bmp"))
             {
                 fullPathWithoutSuffix = fullPathWithoutSuffixCustom;
             }
             Color color = Color.FromArgb(0, 0, 0, 0);
             bool flag = false;
-            if (File.Exists(fullPathWithoutSuffix + ".png"))
+            if (FileExist.FileExists(fullPathWithoutSuffix + ".png"))
             {
                 bitmap = SafeLoadImage(fullPathWithoutSuffix + ".png");
                 empty = fullPathWithoutSuffix + ".png";
@@ -578,7 +578,7 @@ namespace DistantWorlds.Types
             lightPoints = new List<Point>();
             Color color = Color.FromArgb(0, 0, 0, 0);
             bool flag = false;
-            if (File.Exists(filepath))
+            if (FileExist.FileExists(filepath))
             {
                 bitmap = SafeLoadImage(filepath);
                 if (filepath.ToLower(CultureInfo.InvariantCulture).Substring(filepath.Length - 4, 4) == ".png")
@@ -1116,8 +1116,13 @@ namespace DistantWorlds.Types
             List<int> familyNumbers = null;
             if (!string.IsNullOrEmpty(_CustomizationSetName))
             {
-                List<DirectoryInfo> modDir = new DirectoryInfo(modShipsFolder).EnumerateDirectories("family*").ToList();
-                familyNumbers = origDir.Union(modDir).Select(x =>
+                DirectoryInfo modDir = new DirectoryInfo(modShipsFolder);
+                List<DirectoryInfo> modDirFamilyList = new List<DirectoryInfo>();
+                if (modDir.Exists)
+                {
+                    modDirFamilyList = modDir.EnumerateDirectories("family*").ToList();
+                }
+                familyNumbers = origDir.Union(modDirFamilyList).Select(x =>
                 {
                     int.TryParse(x.Name.Substring(6), out int res);
                     return res;

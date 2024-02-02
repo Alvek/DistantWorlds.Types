@@ -205,15 +205,15 @@ namespace DistantWorlds.Types
         if (isPirate)
         {
           path4 = path2;
-          if (!string.IsNullOrEmpty(customPath) && File.Exists(path3))
+          if (!string.IsNullOrEmpty(customPath) && FileExist.FileExists(path3))
             path4 = path3;
-          else if (!File.Exists(path2))
+          else if (!FileExist.FileExists(path2))
             path4 = str2;
         }
-        else if (!string.IsNullOrEmpty(customPath) && File.Exists(path1))
+        else if (!string.IsNullOrEmpty(customPath) && FileExist.FileExists(path1))
           path4 = path1;
         DesignSpecification designSpecification = new DesignSpecification(subRole, isMobile);
-        if (File.Exists(path4))
+        if (FileExist.FileExists(path4))
         {
           designSpecification.ComponentRules.Add(new DesignSpecificationComponentRule(DesignSpecificationComponentRuleType.MustHave, ComponentType.ComputerCommandCenter, 1));
           if (isMobile)

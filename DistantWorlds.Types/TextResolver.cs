@@ -19,7 +19,7 @@ namespace DistantWorlds.Types
 
     public static void LoadText(string filename)
     {
-      if (!File.Exists(filename))
+      if (!FileExist.FileExists(filename))
         return;
       int num = 0;
       try

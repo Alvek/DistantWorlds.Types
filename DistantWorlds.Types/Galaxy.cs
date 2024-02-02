@@ -1972,13 +1972,13 @@ namespace DistantWorlds.Types
             {
                 text = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\raceBiases.txt";
             }
-            if (!File.Exists(text))
+            if (!FileExist.FileExists(text))
             {
                 text = applicationStartupPath + "\\raceBiases.txt";
             }
             try
             {
-                if (!File.Exists(text))
+                if (!FileExist.FileExists(text))
                 {
                     return;
                 }
@@ -18864,7 +18864,7 @@ namespace DistantWorlds.Types
             if (!string.IsNullOrEmpty(customizationSetName))
             {
                 string text2 = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\" + text;
-                if (File.Exists(text2))
+                if (FileExist.FileExists(text2))
                 {
                     filePath = text2;
                 }
@@ -18880,7 +18880,7 @@ namespace DistantWorlds.Types
             if (!string.IsNullOrEmpty(customizationSetName))
             {
                 string text2 = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\" + text;
-                if (File.Exists(text2))
+                if (FileExist.FileExists(text2))
                 {
                     filePath = text2;
                 }
@@ -18897,7 +18897,7 @@ namespace DistantWorlds.Types
             if (!string.IsNullOrEmpty(customizationSetName))
             {
                 string text2 = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\" + text;
-                if (File.Exists(text2))
+                if (FileExist.FileExists(text2))
                 {
                     filePath = text2;
                 }
@@ -18913,7 +18913,7 @@ namespace DistantWorlds.Types
             if (!string.IsNullOrEmpty(customizationSetName))
             {
                 string text2 = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\" + text;
-                if (File.Exists(text2))
+                if (FileExist.FileExists(text2))
                 {
                     filePath = text2;
                 }
@@ -18929,7 +18929,7 @@ namespace DistantWorlds.Types
             if (!string.IsNullOrEmpty(customizationSetName))
             {
                 string text2 = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\" + text;
-                if (File.Exists(text2))
+                if (FileExist.FileExists(text2))
                 {
                     filePath = text2;
                 }
@@ -18946,7 +18946,7 @@ namespace DistantWorlds.Types
             if (!string.IsNullOrEmpty(customizationSetName))
             {
                 string text2 = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\" + text;
-                if (File.Exists(text2))
+                if (FileExist.FileExists(text2))
                 {
                     filePath = text2;
                 }
@@ -18963,7 +18963,7 @@ namespace DistantWorlds.Types
             if (!string.IsNullOrEmpty(customizationSetName))
             {
                 string text2 = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\" + text;
-                if (File.Exists(text2))
+                if (FileExist.FileExists(text2))
                 {
                     filePath = text2;
                 }
@@ -19000,7 +19000,7 @@ namespace DistantWorlds.Types
             if (!string.IsNullOrEmpty(customizationSetName))
             {
                 string text2 = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\" + text;
-                if (File.Exists(text2))
+                if (FileExist.FileExists(text2))
                 {
                     filePath = text2;
                 }
@@ -21397,7 +21397,7 @@ namespace DistantWorlds.Types
             if (!string.IsNullOrEmpty(customizationSetName))
             {
                 string text2 = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\" + text;
-                if (File.Exists(text2))
+                if (FileExist.FileExists(text2))
                 {
                     filePath = text2;
                 }
@@ -22546,7 +22546,7 @@ namespace DistantWorlds.Types
             if (!string.IsNullOrEmpty(customizationSetName))
             {
                 string text2 = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\" + text;
-                if (File.Exists(text2))
+                if (FileExist.FileExists(text2))
                 {
                     filePath = text2;
                 }
@@ -22847,7 +22847,7 @@ namespace DistantWorlds.Types
             }
             try
             {
-                if (!File.Exists(text))
+                if (!FileExist.FileExists(text))
                 {
                     return list;
                 }
@@ -22894,7 +22894,7 @@ namespace DistantWorlds.Types
             SubRoleNameSet subRoleNameSet = new SubRoleNameSet();
             try
             {
-                if (!File.Exists(text))
+                if (!FileExist.FileExists(text))
                 {
                     return subRoleNameSet;
                 }
@@ -22984,13 +22984,13 @@ namespace DistantWorlds.Types
             {
                 text = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\characterNames.txt";
             }
-            if (!File.Exists(text))
+            if (!FileExist.FileExists(text))
             {
                 text = applicationStartupPath + "\\characterNames.txt";
             }
             try
             {
-                if (!File.Exists(text))
+                if (!FileExist.FileExists(text))
                 {
                     throw new ApplicationException("Missing file: " + text);
                 }
@@ -23034,7 +23034,7 @@ namespace DistantWorlds.Types
             foreach (string text in array)
             {
                 Bitmap bitmap = null;
-                if (File.Exists(text))
+                if (FileExist.FileExists(text))
                 {
                     bitmap = new Bitmap(text);
                     list.Add(bitmap);
@@ -23061,7 +23061,7 @@ namespace DistantWorlds.Types
             foreach (string text in array)
             {
                 Bitmap bitmap = null;
-                if (File.Exists(text))
+                if (FileExist.FileExists(text))
                 {
                     bitmap = new Bitmap(text);
                     list.Add(bitmap);
@@ -23751,7 +23751,7 @@ namespace DistantWorlds.Types
                         string[] files = Directory.GetFiles(path, "*.dwd", SearchOption.TopDirectoryOnly);
                         foreach (string path2 in files)
                         {
-                            if (File.Exists(path2))
+                            if (FileExist.FileExists(path2))
                             {
                                 try
                                 {
@@ -23798,7 +23798,7 @@ namespace DistantWorlds.Types
                 for (int i = 0; i < files.Length; i++)
                 {
                     text = files[i];
-                    if (File.Exists(text))
+                    if (FileExist.FileExists(text))
                     {
                         string localText = text;
                         //Race item = Race.LoadFromFile(text);
@@ -23845,7 +23845,7 @@ namespace DistantWorlds.Types
             {
                 text = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\characters\\" + filename + ".txt";
             }
-            if (!File.Exists(text))
+            if (!FileExist.FileExists(text))
             {
                 text = applicationStartupPath + "\\characters\\" + filename + ".txt";
             }
@@ -23859,7 +23859,7 @@ namespace DistantWorlds.Types
             int num = 0;
             try
             {
-                if (File.Exists(filePath))
+                if (FileExist.FileExists(filePath))
                 {
                     using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
                     {
@@ -24317,12 +24317,12 @@ namespace DistantWorlds.Types
                     }
                 }
                 string text4 = name + ".txt";
-                if (!string.IsNullOrEmpty(text3) && File.Exists(text3 + text4))
+                if (!string.IsNullOrEmpty(text3) && FileExist.FileExists(text3 + text4))
                 {
                     empirePolicy.LoadFromFile(text3 + text4);
                     return empirePolicy;
                 }
-                if (File.Exists(text2 + text4))
+                if (FileExist.FileExists(text2 + text4))
                 {
                     empirePolicy.LoadFromFile(text2 + text4);
                     return empirePolicy;
@@ -25981,13 +25981,13 @@ namespace DistantWorlds.Types
             {
                 text = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\designNames.txt";
             }
-            if (!File.Exists(text))
+            if (!FileExist.FileExists(text))
             {
                 text = applicationStartupPath + "\\designNames.txt";
             }
             try
             {
-                if (!File.Exists(text))
+                if (!FileExist.FileExists(text))
                 {
                     throw new ApplicationException("Missing file: " + text);
                 }
@@ -26047,13 +26047,13 @@ namespace DistantWorlds.Types
             {
                 text = applicationStartupPath + "\\Customization\\" + customizationSetName + "\\systemNames.txt";
             }
-            if (!File.Exists(text))
+            if (!FileExist.FileExists(text))
             {
                 text = applicationStartupPath + "\\systemNames.txt";
             }
             try
             {
-                if (!File.Exists(text))
+                if (!FileExist.FileExists(text))
                 {
                     throw new ApplicationException("Missing file: " + text);
                 }
@@ -48923,7 +48923,7 @@ namespace DistantWorlds.Types
                     continue;
                 }
                 string text3 = "Race_" + RemoveSpecialCharacters(race.Name) + ".mht";
-                if (File.Exists(text2 + text3) || File.Exists(text + text3))
+                if (FileExist.FileExists(text2 + text3) || FileExist.FileExists(text + text3))
                 {
                     encyclopediaItems.Add(new EncyclopediaItem(race.Name, text3, EncyclopediaCategory.Races, isCategoryRoot: false));
                     switch (race.NativeHabitatType)
@@ -48975,7 +48975,7 @@ namespace DistantWorlds.Types
                 list.AddRange(directoryInfo2.GetFiles(text3 + "*.mht"));
             }
             string text4 = text3 + "Default.mht";
-            if (!File.Exists(text2 + text4) && !File.Exists(text + text4))
+            if (!FileExist.FileExists(text2 + text4) && !FileExist.FileExists(text + text4))
             {
                 text4 = string.Empty;
             }
@@ -49031,7 +49031,7 @@ namespace DistantWorlds.Types
                 DirectoryInfo directoryInfo = new DirectoryInfo(text);
                 FileInfo[] files = directoryInfo.GetFiles(customizationSetName + "_*.mht");
                 string text2 = customizationSetName + ".mht";
-                if (!File.Exists(text + text2))
+                if (!FileExist.FileExists(text + text2))
                 {
                     text2 = string.Empty;
                     if (files.Length > 0)
@@ -49073,7 +49073,7 @@ namespace DistantWorlds.Types
                 if (governmentAttributes != null)
                 {
                     string text3 = "GameConcepts_GovernmentTypes_" + RemoveSpecialCharacters(governmentAttributes.Name) + ".mht";
-                    if (File.Exists(text2 + text3) || File.Exists(text + text3))
+                    if (FileExist.FileExists(text2 + text3) || FileExist.FileExists(text + text3))
                     {
                         encyclopediaItems.Add(new EncyclopediaItem(governmentAttributes.Name, text3, EncyclopediaCategory.GovernmentTypes, isCategoryRoot: false));
                         encyclopediaItems[TextResolver.GetText("Government Types")].RelatedItems.Add(encyclopediaItems[governmentAttributes.Name]);
@@ -49095,7 +49095,7 @@ namespace DistantWorlds.Types
                     continue;
                 }
                 string text3 = "Resource_" + RemoveSpecialCharacters(resourceDefinition.Name) + ".mht";
-                if (File.Exists(text2 + text3) || File.Exists(text + text3))
+                if (FileExist.FileExists(text2 + text3) || FileExist.FileExists(text + text3))
                 {
                     encyclopediaItems.Add(new EncyclopediaItem(resourceDefinition.Name, text3, EncyclopediaCategory.Resources, isCategoryRoot: false));
                     encyclopediaItems[resourceDefinition.Name].RelatedItems.Add(encyclopediaItems[TextResolver.GetText("Resources")]);

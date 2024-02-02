@@ -29,7 +29,7 @@ namespace DistantWorlds.Types
       int num1 = 0;
       try
       {
-        if (!File.Exists(filePath))
+        if (!FileExist.FileExists(filePath))
           return;
         FileStream fileStream = File.OpenRead(filePath);
         StreamReader streamReader = new StreamReader((Stream) fileStream);
