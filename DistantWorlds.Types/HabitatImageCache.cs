@@ -264,7 +264,7 @@ namespace DistantWorlds.Types
         private Bitmap LoadImage(string filepath)
         {
             Bitmap bitmap = (Bitmap)null;
-            if (FileExist.FileExists(filepath))
+            if (File.Exists(filepath))
                 bitmap = this.SafeLoadImage(filepath);
             return bitmap;
         }
@@ -272,7 +272,7 @@ namespace DistantWorlds.Types
         private Bitmap SafeLoadImage(string imagePath)
         {
             Bitmap bitmap = (Bitmap)null;
-            if (FileExist.FileExists(imagePath))
+            if (File.Exists(imagePath))
             {
                 try
                 {
@@ -383,7 +383,7 @@ namespace DistantWorlds.Types
         {
             string empty = string.Empty;
             string filePathForImage;
-            if (!string.IsNullOrEmpty(customPath) && FileExist.FileExists(customPath + filename))
+            if (!string.IsNullOrEmpty(customPath) && File.Exists(customPath + filename))
             {
                 filePathForImage = customPath + filename;
                 isCustom = true;

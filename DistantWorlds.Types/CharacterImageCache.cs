@@ -227,10 +227,10 @@ namespace DistantWorlds.Types
         if (!string.IsNullOrEmpty(this._CustomizationSetName))
         {
           string path = this._ApplicationStartupPath + "\\customization\\" + this._CustomizationSetName + "\\images\\units\\characters\\" + character.PictureFilename;
-          if (FileExist.FileExists(path))
+          if (File.Exists(path))
             str = path;
         }
-        if (FileExist.FileExists(str))
+        if (File.Exists(str))
           bitmap = this.SafeLoadImage(str);
       }
       return bitmap;
@@ -239,7 +239,7 @@ namespace DistantWorlds.Types
     private Bitmap SafeLoadImage(string imagePath)
     {
       Bitmap bitmap = (Bitmap) null;
-      if (FileExist.FileExists(imagePath))
+      if (File.Exists(imagePath))
       {
         try
         {

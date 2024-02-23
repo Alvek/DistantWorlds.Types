@@ -80,8 +80,8 @@ namespace DistantWorlds.Types
                 switch (str2.ToLower(CultureInfo.InvariantCulture))
                 {
                   case "project":
-                    if (nodeDefinitionList.Count > 1500)
-                      throw new ApplicationException("Exceeded maximum research project count in " + filePath + ". Cannot define more than 1500 research projects.");
+                    //if (nodeDefinitionList.Count > 1500)
+                    //  throw new ApplicationException("Exceeded maximum research project count in " + filePath + ". Cannot define more than 1500 research projects.");
                     int result1;
                     int startIndex2;
                     try

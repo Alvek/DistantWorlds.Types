@@ -25,13 +25,13 @@ namespace DistantWorlds.Types
         string str1 = race.Name.Replace("'", "");
         string str2 = baseDialogPath + str1 + ".txt";
         string str3 = customDialogPath + str1 + ".txt";
-        if (FileExist.FileExists(str3))
+        if (File.Exists(str3))
         {
           DialogPartList dialogFile = this.ParseDialogFile(str3);
           dialogFile.Race = race;
           this._DialogParts.Add(dialogFile);
         }
-        else if (FileExist.FileExists(str2))
+        else if (File.Exists(str2))
         {
           DialogPartList dialogFile = this.ParseDialogFile(str2);
           dialogFile.Race = race;

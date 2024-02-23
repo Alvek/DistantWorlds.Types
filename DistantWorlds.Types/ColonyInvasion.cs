@@ -461,10 +461,10 @@ namespace DistantWorlds.Types
       if (!string.IsNullOrEmpty(this._CustomizationSetName))
       {
         string path = this._ApplicationStartupPath + "\\customization\\" + this._CustomizationSetName + "\\images\\environment\\planetmaps\\" + this._LandscapeFilenames[index];
-        if (FileExist.FileExists(path))
+        if (File.Exists(path))
           str = path;
       }
-      if (FileExist.FileExists(str))
+      if (File.Exists(str))
         this._LandscapeImage = GraphicsHelper.LoadImageFromFilePath(str);
       if (landscapeImage != null && landscapeImage.PixelFormat != PixelFormat.Undefined)
         landscapeImage.Dispose();

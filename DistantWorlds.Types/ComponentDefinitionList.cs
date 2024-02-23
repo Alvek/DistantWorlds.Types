@@ -75,7 +75,7 @@ namespace DistantWorlds.Types
       this.Clear();
       ComponentDefinitionList componentDefinitionList = new ComponentDefinitionList();
       int num1 = 0;
-      int num2 = 500;
+      //int num2 = 500;
       try
       {
         using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
@@ -88,8 +88,8 @@ namespace DistantWorlds.Types
               string str = streamReader.ReadLine();
               if (!string.IsNullOrEmpty(str) && str.Trim() != string.Empty && str.Trim().Substring(0, 1) != "'")
               {
-                if (componentDefinitionList.Count > num2)
-                  throw new ApplicationException("Exceeded maximum component count in " + filePath + ". Cannot define more than " + num2.ToString() + " components.");
+                //if (componentDefinitionList.Count > num2)
+                //  throw new ApplicationException("Exceeded maximum component count in " + filePath + ". Cannot define more than " + num2.ToString() + " components.");
                 int result1 = 0;
                 string empty1 = string.Empty;
                 int result2 = 0;

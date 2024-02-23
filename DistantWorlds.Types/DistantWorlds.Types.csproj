@@ -57,6 +57,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Remove="AssemblyInfo.cs" />
+		<Compile Remove="FileExist.cs" />
 		<Compile Remove="SteamApiWrapper.cs" />
 		<Compile Remove="SteamWrapperSelector.cs" />
 	</ItemGroup>
